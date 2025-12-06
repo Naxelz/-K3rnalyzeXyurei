@@ -1,0 +1,65 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <!-- Palette Catppuccin Mocha (Cyber/Dark) -->
+    <Color x:Key="BaseColor">#1E1E2E</Color>
+    <Color x:Key="MantleColor">#181825</Color>
+    <Color x:Key="CrustColor">#11111B</Color>
+    
+    <Color x:Key="Surface0Color">#313244</Color>
+    <Color x:Key="Surface1Color">#45475A</Color>
+    <Color x:Key="Surface2Color">#585B70</Color>
+    
+    <Color x:Key="Overlay0Color">#6C7086</Color>
+    <Color x:Key="Overlay1Color">#7F849C</Color>
+    <Color x:Key="Overlay2Color">#9399B2</Color>
+    
+    <Color x:Key="TextColor">#CDD6F4</Color>
+    <Color x:Key="SubtextColor">#A6ADC8</Color>
+    <Color x:Key="MutedColor">#6C7086</Color>
+    
+    <Color x:Key="BlueColor">#89B4FA</Color>
+    <Color x:Key="LavenderColor">#B4BEFE</Color>
+    <Color x:Key="SapphireColor">#74C7EC</Color>
+    <Color x:Key="SkyColor">#89DCEB</Color>
+    <Color x:Key="TealColor">#94E2D5</Color>
+    <Color x:Key="GreenColor">#A6E3A1</Color>
+    <Color x:Key="YellowColor">#F9E2AF</Color>
+    <Color x:Key="PeachColor">#FAB387</Color>
+    <Color x:Key="MaroonColor">#EBA0AC</Color>
+    <Color x:Key="RedColor">#F38BA8</Color>
+    <Color x:Key="MauveColor">#CBA6F7</Color>
+    <Color x:Key="PinkColor">#F5C2E7</Color>
+    <Color x:Key="FlamingoColor">#F2CDCD</Color>
+    <Color x:Key="RosewaterColor">#F5E0DC</Color>
+    
+    <!-- Brushes Mapeados -->
+    <SolidColorBrush x:Key="BackgroundBrush" Color="{StaticResource BaseColor}"/>
+    <SolidColorBrush x:Key="SurfaceBrush" Color="{StaticResource MantleColor}"/>
+    <SolidColorBrush x:Key="CardBrush" Color="{StaticResource Surface0Color}"/>
+    <SolidColorBrush x:Key="BorderBrush" Color="{StaticResource Surface1Color}"/>
+    
+    <SolidColorBrush x:Key="PrimaryBrush" Color="{StaticResource BlueColor}"/>
+    <SolidColorBrush x:Key="PrimaryHoverBrush" Color="{StaticResource LavenderColor}"/>
+    <SolidColorBrush x:Key="AccentBrush" Color="{StaticResource MauveColor}"/>
+
+    <!-- Compatibilidad con claves antiguas de tema neon -->
+    <SolidColorBrush x:Key="NeonCyanBrush" Color="{StaticResource SkyColor}"/>
+    <SolidColorBrush x:Key="NeonPinkBrush" Color="{StaticResource PinkColor}"/>
+    <SolidColorBrush x:Key="NeonBlueBrush" Color="{StaticResource SapphireColor}"/>
+    <SolidColorBrush x:Key="NeonPurpleBrush" Color="{StaticResource MauveColor}"/>
+    
+    <SolidColorBrush x:Key="TextPrimaryBrush" Color="{StaticResource TextColor}"/>
+    <SolidColorBrush x:Key="TextSecondaryBrush" Color="{StaticResource SubtextColor}"/>
+    <SolidColorBrush x:Key="TextTertiaryBrush" Color="{StaticResource Overlay1Color}"/>
+    
+    <SolidColorBrush x:Key="SuccessBrush" Color="{StaticResource GreenColor}"/>
+    <SolidColorBrush x:Key="WarningBrush" Color="{StaticResource YellowColor}"/>
+    <SolidColorBrush x:Key="ErrorBrush" Color="{StaticResource RedColor}"/>
+
+    <LinearGradientBrush x:Key="BannerGradient" StartPoint="0,0" EndPoint="1,1">
+        <GradientStop Color="{StaticResource MantleColor}" Offset="0"/>
+        <GradientStop Color="{StaticResource BaseColor}" Offset="1"/>
+    </LinearGradientBrush>
+    
+</ResourceDictionary>

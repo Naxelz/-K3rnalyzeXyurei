@@ -1,0 +1,52 @@
+<UserControl x:Class="Yurei.Pages.ToolsPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             Background="{StaticResource BackgroundBrush}">
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <Grid Margin="30">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!-- Header -->
+            <StackPanel Grid.Row="0" Margin="0,0,0,30">
+                <TextBlock Text="Herramientas Adicionales" Style="{StaticResource TitleText}"/>
+                <TextBlock Text="Utilidades extra para análisis y optimización." Style="{StaticResource SubtitleText}"/>
+            </StackPanel>
+
+            <!-- Content -->
+            <WrapPanel Grid.Row="1" Orientation="Horizontal">
+                <Border Style="{StaticResource ModernCard}" Width="300" Margin="0,0,24,24">
+                    <StackPanel>
+                        <TextBlock Text="Limpieza de Cache" FontSize="18" FontWeight="Bold" Foreground="{StaticResource TextPrimaryBrush}" Margin="0,0,0,12"/>
+                        <TextBlock Text="Elimina archivos temporales de Roblox para solucionar errores de inyección." 
+                                   TextWrapping="Wrap" Foreground="{StaticResource TextSecondaryBrush}" Margin="0,0,0,16"/>
+                        <Button Content="Ejecutar Limpieza" Style="{StaticResource ModernButton}" Background="{StaticResource NeonPurpleBrush}"/>
+                    </StackPanel>
+                </Border>
+
+                <Border Style="{StaticResource ModernCard}" Width="300" Margin="0,0,24,24">
+                    <StackPanel>
+                        <TextBlock Text="Kill Roblox" FontSize="18" FontWeight="Bold" Foreground="{StaticResource TextPrimaryBrush}" Margin="0,0,0,12"/>
+                        <TextBlock Text="Cierra forzosamente todos los procesos de Roblox activos." 
+                                   TextWrapping="Wrap" Foreground="{StaticResource TextSecondaryBrush}" Margin="0,0,0,16"/>
+                        <Button Content="Matar Procesos" Style="{StaticResource ModernButton}" Background="{StaticResource ErrorBrush}"/>
+                    </StackPanel>
+                </Border>
+                
+                <Border Style="{StaticResource ModernCard}" Width="300" Margin="0,0,24,24">
+                    <StackPanel>
+                        <TextBlock Text="Eliminación Profunda" FontSize="18" FontWeight="Bold" Foreground="{StaticResource TextPrimaryBrush}" Margin="0,0,0,12"/>
+                        <TextBlock Text="Elimina permanentemente todos los cheats, FFlags y rastros detectados en el sistema." 
+                                   TextWrapping="Wrap" Foreground="{StaticResource TextSecondaryBrush}" Margin="0,0,0,16"/>
+                        <Button Content="☢️ Purga Total" 
+                               Style="{StaticResource ModernButton}" 
+                               Background="{StaticResource ErrorBrush}"
+                               Click="DeepCleanButton_Click"/>
+                    </StackPanel>
+                </Border>
+            </WrapPanel>
+        </Grid>
+    </ScrollViewer>
+</UserControl>

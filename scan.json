@@ -1,0 +1,33 @@
+{
+  "browser": {
+    "searches": [
+      { "browser": "Chrome", "q": "roblox exploit free" },
+      { "browser": "Edge", "q": "fflags roblox dev" }
+    ],
+    "history": [
+      { "browser": "Chrome", "url": "https://weao.xyz/exploits", "title": "weao exploits" },
+      { "browser": "Firefox", "url": "https://github.com/roblox/fflags" }
+    ]
+  },
+  "exploits": {
+    "urls": [
+      { "name": "Krnl", "url": "https://krnl.place", "source": "weao" },
+      { "name": "Fluxus", "url": "https://fluxteam.net", "source": "list" }
+    ]
+  },
+  "fflags": {
+    "findings": [
+      { "key": "FLogNetwork", "value": "verbose", "path": "HKCU\\Software\\Roblox" }
+    ]
+  },
+  "vpn": {
+    "active": false,
+    "providers": ["OpenVPN", "Proton", "NordVPN"]
+  },
+  "system": {
+    "os": "Windows 10 Home 22H2",
+    "installDate": "2025-11-30",
+    "bootTime": "3h",
+    "country": "Greece"
+  }
+}

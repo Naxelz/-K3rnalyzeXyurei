@@ -1,0 +1,159 @@
+<UserControl x:Class="Yurei.Pages.SettingsPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             Background="{StaticResource BackgroundBrush}">
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <Grid Margin="30">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            
+            <!-- Header con efecto neon -->
+            <Border Grid.Row="0" 
+                   Margin="0,0,0,30"
+                   Padding="30"
+                   Background="{StaticResource CardBrush}"
+                   BorderBrush="{StaticResource AccentBrush}"
+                   BorderThickness="2"
+                   CornerRadius="12">
+                <Border.Effect>
+                    <DropShadowEffect Color="#9d4edd" BlurRadius="20" Opacity="0.6" ShadowDepth="0"/>
+                </Border.Effect>
+                <StackPanel>
+                    <TextBlock Text="⚙️ Configuración" 
+                              FontSize="36"
+                              FontWeight="Bold"
+                              Foreground="{StaticResource AccentBrush}">
+                        <TextBlock.Effect>
+                            <DropShadowEffect Color="#9d4edd" BlurRadius="15" Opacity="0.8" ShadowDepth="0"/>
+                        </TextBlock.Effect>
+                    </TextBlock>
+                    <TextBlock Text="Ajustes y preferencias de Yurei" 
+                              Style="{StaticResource SubtitleText}"
+                              Margin="0,12,0,0"
+                              Foreground="{StaticResource TextSecondaryBrush}"/>
+                </StackPanel>
+            </Border>
+            
+            <!-- Configuraciones -->
+            <StackPanel Grid.Row="1">
+                <!-- Sección General -->
+                <Border Style="{StaticResource ModernCard}" 
+                       BorderBrush="{StaticResource NeonCyanBrush}"
+                       BorderThickness="1"
+                       Margin="0,0,0,20">
+                    <StackPanel>
+                        <TextBlock Text="⚙️ General" 
+                                  FontSize="22"
+                                  FontWeight="Bold"
+                                  Foreground="{StaticResource NeonCyanBrush}"
+                                  Margin="0,0,0,15">
+                            <TextBlock.Effect>
+                                <DropShadowEffect Color="#00d4ff" BlurRadius="10" Opacity="0.5" ShadowDepth="0"/>
+                            </TextBlock.Effect>
+                        </TextBlock>
+                        
+                        <CheckBox Content="Iniciar monitoreo automático al abrir"
+                                  Foreground="{StaticResource TextPrimaryBrush}"
+                                  Margin="0,0,0,10"/>
+                        
+                        <CheckBox Content="Mostrar notificaciones de resultados"
+                                  Foreground="{StaticResource TextPrimaryBrush}"
+                                  Margin="0,0,0,10"/>
+                        
+                        <TextBlock Text="Intervalo de monitoreo (minutos):" 
+                                  Foreground="{StaticResource TextSecondaryBrush}"
+                                  Margin="0,10,0,5"/>
+                        <TextBox Text="5" 
+                                Width="100"
+                                HorizontalAlignment="Left"
+                                Margin="0,0,0,10"/>
+                    </StackPanel>
+                </Border>
+                
+                <!-- Sección Búsqueda -->
+                <Border Style="{StaticResource ModernCard}" 
+                       BorderBrush="{StaticResource NeonPurpleBrush}"
+                       BorderThickness="1"
+                       Margin="0,0,0,20">
+                    <StackPanel>
+                        <TextBlock Text="🔍 Búsqueda" 
+                                  FontSize="22"
+                                  FontWeight="Bold"
+                                  Foreground="{StaticResource NeonPurpleBrush}"
+                                  Margin="0,0,0,15">
+                            <TextBlock.Effect>
+                                <DropShadowEffect Color="#8338ec" BlurRadius="10" Opacity="0.5" ShadowDepth="0"/>
+                            </TextBlock.Effect>
+                        </TextBlock>
+                        
+                        <CheckBox Content="Buscar en historial del navegador"
+                                  Foreground="{StaticResource TextPrimaryBrush}"
+                                  IsChecked="True"
+                                  Margin="0,0,0,10"/>
+                        
+                        <CheckBox Content="Buscar en Registry"
+                                  Foreground="{StaticResource TextPrimaryBrush}"
+                                  IsChecked="True"
+                                  Margin="0,0,0,10"/>
+                        
+                        <CheckBox Content="Buscar en archivos del sistema"
+                                  Foreground="{StaticResource TextPrimaryBrush}"
+                                  IsChecked="True"
+                                  Margin="0,0,0,10"/>
+                        
+                        <TextBlock Text="Profundidad de búsqueda:" 
+                                  Foreground="{StaticResource TextSecondaryBrush}"
+                                  Margin="0,10,0,5"/>
+                        <TextBox Text="5" 
+                                Width="100"
+                                HorizontalAlignment="Left"/>
+                        
+                        <TextBlock Text="Discord Webhook URL (Reportes):" 
+                                  Foreground="{StaticResource TextSecondaryBrush}"
+                                  Margin="0,10,0,5"/>
+                        <TextBox x:Name="WebhookBox"
+                                Width="400"
+                                HorizontalAlignment="Left"
+                                Margin="0,0,0,10"
+                                Background="{StaticResource CardBrush}"
+                                Foreground="{StaticResource TextPrimaryBrush}"
+                                BorderBrush="{StaticResource BorderBrush}"
+                                Padding="5"/>
+                    </StackPanel>
+                </Border>
+                
+                <!-- Sección Apariencia -->
+                <Border Style="{StaticResource ModernCard}"
+                       BorderBrush="{StaticResource NeonPinkBrush}"
+                       BorderThickness="1">
+                    <StackPanel>
+                        <TextBlock Text="🎨 Apariencia" 
+                                  FontSize="22"
+                                  FontWeight="Bold"
+                                  Foreground="{StaticResource NeonPinkBrush}"
+                                  Margin="0,0,0,15">
+                            <TextBlock.Effect>
+                                <DropShadowEffect Color="#ff006e" BlurRadius="10" Opacity="0.5" ShadowDepth="0"/>
+                            </TextBlock.Effect>
+                        </TextBlock>
+                        
+                        <TextBlock Text="Tema:" 
+                                  Foreground="{StaticResource TextSecondaryBrush}"
+                                  Margin="0,0,0,5"/>
+                        <ComboBox x:Name="ThemeSelector" 
+                                 SelectedIndex="0" 
+                                 Width="200" 
+                                 HorizontalAlignment="Left"
+                                 SelectionChanged="ThemeSelector_SelectionChanged">
+                            <ComboBoxItem Content="Oscuro (Predeterminado)"/>
+                            <ComboBoxItem Content="Claro"/>
+                        </ComboBox>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+        </Grid>
+    </ScrollViewer>
+</UserControl>
+

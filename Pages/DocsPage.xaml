@@ -1,0 +1,116 @@
+<UserControl x:Class="Yurei.Pages.DocsPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             Background="{StaticResource BackgroundBrush}">
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <Grid Margin="30">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            
+            <!-- Header -->
+            <Border Grid.Row="0" 
+                   Margin="0,0,0,30"
+                   Padding="30"
+                   Background="{StaticResource CardBrush}"
+                   BorderBrush="{StaticResource NeonPurpleBrush}"
+                   BorderThickness="2"
+                   CornerRadius="12">
+                <Border.Effect>
+                    <DropShadowEffect Color="#8338ec" BlurRadius="20" Opacity="0.6" ShadowDepth="0"/>
+                </Border.Effect>
+                <StackPanel>
+                    <TextBlock Text="📚 Documentación" 
+                              FontSize="36"
+                              FontWeight="Bold"
+                              Foreground="{StaticResource NeonPurpleBrush}">
+                        <TextBlock.Effect>
+                            <DropShadowEffect Color="#8338ec" BlurRadius="15" Opacity="0.8" ShadowDepth="0"/>
+                        </TextBlock.Effect>
+                    </TextBlock>
+                    <TextBlock Text="Guías, referencias y documentación de Yurei" 
+                              Style="{StaticResource SubtitleText}"
+                              Margin="0,12,0,0"
+                              Foreground="{StaticResource TextSecondaryBrush}"/>
+                </StackPanel>
+            </Border>
+            
+            <!-- Contenido -->
+            <StackPanel Grid.Row="1">
+                <!-- Sección FFlags -->
+                <Border Style="{StaticResource ModernCard}" 
+                       BorderBrush="{StaticResource NeonCyanBrush}"
+                       BorderThickness="1"
+                       Margin="0,0,0,20">
+                    <StackPanel>
+                        <TextBlock Text="⚙️ FastFlags (FFlags)" 
+                                  FontSize="24"
+                                  FontWeight="Bold"
+                                  Foreground="{StaticResource NeonCyanBrush}"
+                                  Margin="0,0,0,15"/>
+                        <TextBlock Text="Los FastFlags son configuraciones experimentales de Roblox que pueden activarse o desactivarse sin necesidad de actualizar el cliente." 
+                                  Foreground="{StaticResource TextSecondaryBrush}"
+                                  TextWrapping="Wrap"
+                                  Margin="0,0,0,10"
+                                  FontSize="14"/>
+                        <TextBlock Text="Yurei busca FFlags en:" 
+                                  Foreground="{StaticResource TextPrimaryBrush}"
+                                  FontWeight="SemiBold"
+                                  Margin="0,10,0,5"/>
+                        <TextBlock Text="• Registry de Windows (HKCU y HKLM)&#x0a;• Archivos de configuración de Roblox&#x0a;• Procesos en ejecución&#x0a;• Historial del navegador&#x0a;• Variables de entorno&#x0a;• Logs del sistema" 
+                                  Foreground="{StaticResource TextSecondaryBrush}"
+                                  TextWrapping="Wrap"
+                                  Margin="20,0,0,0"
+                                  FontSize="13"/>
+                    </StackPanel>
+                </Border>
+                
+                <!-- Sección Exploits -->
+                <Border Style="{StaticResource ModernCard}" 
+                       BorderBrush="{StaticResource NeonPinkBrush}"
+                       BorderThickness="1"
+                       Margin="0,0,0,20">
+                    <StackPanel>
+                        <TextBlock Text="🔍 Exploits" 
+                                  FontSize="24"
+                                  FontWeight="Bold"
+                                  Foreground="{StaticResource NeonPinkBrush}"
+                                  Margin="0,0,0,15"/>
+                        <TextBlock Text="Yurei busca exploits conocidos de Roblox usando WEAO.xyz y búsquedas locales en el sistema." 
+                                  Foreground="{StaticResource TextSecondaryBrush}"
+                                  TextWrapping="Wrap"
+                                  Margin="0,0,0,10"
+                                  FontSize="14"/>
+                        <TextBlock Text="Solo se muestran resultados encontrados, no exploits desconocidos." 
+                                  Foreground="{StaticResource WarningBrush}"
+                                  TextWrapping="Wrap"
+                                  Margin="0,0,0,10"
+                                  FontSize="13"
+                                  FontWeight="SemiBold"/>
+                    </StackPanel>
+                </Border>
+                
+                <!-- Sección VPN -->
+                <Border Style="{StaticResource ModernCard}" 
+                       BorderBrush="{StaticResource NeonBlueBrush}"
+                       BorderThickness="1"
+                       Margin="0,0,0,20">
+                    <StackPanel>
+                        <TextBlock Text="🔒 VPN &amp; Proxy" 
+                                  FontSize="24"
+                                  FontWeight="Bold"
+                                  Foreground="{StaticResource NeonBlueBrush}"
+                                  Margin="0,0,0,15"/>
+                        <TextBlock Text="Detección de VPNs, proxies y herramientas de red que pueden afectar la conexión a Roblox." 
+                                  Foreground="{StaticResource TextSecondaryBrush}"
+                                  TextWrapping="Wrap"
+                                  Margin="0,0,0,10"
+                                  FontSize="14"/>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+        </Grid>
+    </ScrollViewer>
+</UserControl>
+

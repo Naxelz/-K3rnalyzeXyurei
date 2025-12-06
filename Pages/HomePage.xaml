@@ -1,0 +1,195 @@
+<UserControl x:Class="Yurei.Pages.HomePage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             Background="{StaticResource BackgroundBrush}">
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <Grid Margin="30">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            
+            <!-- Banner principal con efecto neon -->
+            <Border Grid.Row="0" 
+                   Background="{StaticResource BannerGradient}"
+                   Padding="40,60,40,60"
+                   Margin="0,0,0,30"
+                   CornerRadius="12"
+                   BorderBrush="{StaticResource NeonCyanBrush}"
+                   BorderThickness="2">
+                <Border.Effect>
+                    <DropShadowEffect Color="#00d4ff" BlurRadius="30" Opacity="0.6" ShadowDepth="0"/>
+                </Border.Effect>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    
+                    <TextBlock Grid.Row="0" 
+                              Text="Yurei" 
+                              Style="{StaticResource TitleText}"
+                              FontSize="56"
+                              Foreground="{StaticResource NeonCyanBrush}">
+                        <TextBlock.Effect>
+                            <DropShadowEffect Color="#00d4ff" BlurRadius="20" Opacity="0.9" ShadowDepth="0"/>
+                        </TextBlock.Effect>
+                    </TextBlock>
+                    
+                    <TextBlock Grid.Row="1" 
+                              Text="Roblox Research &amp; Exploitation Tool" 
+                              Style="{StaticResource SubtitleText}"
+                              Margin="0,12,0,0"/>
+                    
+                    <TextBlock Grid.Row="2" 
+                              Text="Herramienta avanzada para búsquedas, exploits, FFlags, VPN y análisis de Roblox." 
+                              Style="{StaticResource DescriptionText}"
+                              Margin="0,16,0,0"
+                              FontSize="16"/>
+                    
+                    <TextBlock Grid.Row="2" 
+                              Text="Creado con ❤️ para la comunidad" 
+                              Style="{StaticResource DescriptionText}"
+                              HorizontalAlignment="Right"
+                              VerticalAlignment="Bottom"
+                              Margin="0,0,0,0"
+                              FontSize="12"
+                              Opacity="0.7"/>
+                </Grid>
+            </Border>
+            
+            <!-- Cards de características -->
+            <ItemsControl Grid.Row="1" 
+                         Margin="0,0,0,30"
+                         x:Name="FeatureCards">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <UniformGrid Columns="3" Rows="1"/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Border Style="{StaticResource ModernCard}"
+                               MouseEnter="Card_MouseEnter"
+                               MouseLeave="Card_MouseLeave"
+                               Cursor="Hand">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                
+                                <Border Grid.Row="0" 
+                                       Width="60" 
+                                       Height="60"
+                                       Background="{Binding IconBackground}"
+                                       CornerRadius="8"
+                                       Margin="0,0,0,16">
+                                    <TextBlock Text="{Binding Icon}" 
+                                              FontSize="28"
+                                              HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"/>
+                                </Border>
+                                
+                                <TextBlock Grid.Row="1" 
+                                          Text="{Binding Title}" 
+                                          FontSize="18"
+                                          FontWeight="SemiBold"
+                                          Foreground="{StaticResource TextPrimaryBrush}"
+                                          Margin="0,0,0,8"/>
+                                
+                                <TextBlock Grid.Row="2" 
+                                          Text="{Binding Description}" 
+                                          Style="{StaticResource DescriptionText}"/>
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+            
+            <!-- Estadísticas rápidas -->
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                
+                <!-- Card Estadísticas -->
+                <Border Grid.Column="0" 
+                       Style="{StaticResource ModernCard}"
+                       BorderBrush="{StaticResource NeonCyanBrush}"
+                       BorderThickness="1"
+                       Margin="0,0,10,0">
+                    <StackPanel>
+                        <TextBlock Text="⚙️ FFlags" 
+                                  FontSize="18"
+                                  FontWeight="Bold"
+                                  Foreground="{StaticResource NeonCyanBrush}"
+                                  Margin="0,0,0,10"/>
+                        <TextBlock x:Name="FFlagsCount"
+                                  Text="0 encontrados" 
+                                  FontSize="24"
+                                  FontWeight="Bold"
+                                  Foreground="{StaticResource TextPrimaryBrush}"/>
+                        <TextBlock Text="Monitoreo activo" 
+                                  FontSize="12"
+                                  Foreground="{StaticResource TextTertiaryBrush}"
+                                  Margin="0,5,0,0"/>
+                    </StackPanel>
+                </Border>
+                
+                <Border Grid.Column="1" 
+                       Style="{StaticResource ModernCard}"
+                       BorderBrush="{StaticResource NeonPinkBrush}"
+                       BorderThickness="1"
+                       Margin="5,0,5,0">
+                    <StackPanel>
+                        <TextBlock Text="🔍 Exploits" 
+                                  FontSize="18"
+                                  FontWeight="Bold"
+                                  Foreground="{StaticResource NeonPinkBrush}"
+                                  Margin="0,0,0,10"/>
+                        <TextBlock x:Name="ExploitsCount"
+                                  Text="0 encontrados" 
+                                  FontSize="24"
+                                  FontWeight="Bold"
+                                  Foreground="{StaticResource TextPrimaryBrush}"/>
+                        <TextBlock Text="Monitoreo activo" 
+                                  FontSize="12"
+                                  Foreground="{StaticResource TextTertiaryBrush}"
+                                  Margin="0,5,0,0"/>
+                    </StackPanel>
+                </Border>
+                
+                <Border Grid.Column="2" 
+                       Style="{StaticResource ModernCard}"
+                       BorderBrush="{StaticResource NeonBlueBrush}"
+                       BorderThickness="1"
+                       Margin="10,0,0,0">
+                    <StackPanel>
+                        <TextBlock Text="🌐 Browsers" 
+                                  FontSize="18"
+                                  FontWeight="Bold"
+                                  Foreground="{StaticResource NeonBlueBrush}"
+                                  Margin="0,0,0,10"/>
+                        <TextBlock x:Name="BrowsersCount"
+                                  Text="0 encontrados" 
+                                  FontSize="24"
+                                  FontWeight="Bold"
+                                  Foreground="{StaticResource TextPrimaryBrush}"/>
+                        <TextBlock Text="Monitoreo activo" 
+                                  FontSize="12"
+                                  Foreground="{StaticResource TextTertiaryBrush}"
+                                  Margin="0,5,0,0"/>
+                    </StackPanel>
+                </Border>
+            </Grid>
+        </Grid>
+    </ScrollViewer>
+</UserControl>
+
